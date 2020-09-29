@@ -29,15 +29,18 @@ bicicleta.removeById = function(id){
     if(bicicleta.findById(id)){
         for (var i = 0; i < bicicleta.allBicis.length; i++){
             if(bicicleta.allBicis[i].id == id){
-                bicicleta.allBicis.splice(1,1);
+                console.log("Hellou estamos eliminado");
+                // console.log(id)
+                // console.log(bicicleta.allBicis[i]);
+                bicicleta.allBicis.splice(i,1);
                 break;
             }
         }
     }    
 }
 
-var a = new bicicleta(1, 'rojo', 'urbana', [-34.60124124, -58.3861497]);
-var b = new bicicleta(2, 'blanca', 'urbana', [-34.596932, -58.3808287]);
+var a = new bicicleta(1, 'rojo', 'urbana', [28.100174, -15.478464]);
+var b = new bicicleta(2, 'blanca', 'urbana', [28.094196, -15.474954]);
 
 bicicleta.add(a);
 bicicleta.add(b);
