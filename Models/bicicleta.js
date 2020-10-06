@@ -29,9 +29,6 @@ bicicleta.removeById = function(id){
     if(bicicleta.findById(id)){
         for (var i = 0; i < bicicleta.allBicis.length; i++){
             if(bicicleta.allBicis[i].id == id){
-                console.log("Hellou estamos eliminado");
-                // console.log(id)
-                // console.log(bicicleta.allBicis[i]);
                 bicicleta.allBicis.splice(i,1);
                 break;
             }

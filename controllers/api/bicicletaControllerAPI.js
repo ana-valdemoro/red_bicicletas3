@@ -29,13 +29,17 @@ exports.bicicleta_delete = function (req, res){
 }
 
 exports.bicicleta_update = function (req, res){
-    var bici = bicicleta.findById(req.body.id);
-    bici.color = req.body.color;
-    bici.modelo = req.body.modelo;
-    bici.ubicacion = [req.body.latitud, req.body.longitud];
-
-    res.status(200).json({
-        bicicleta:bici
-    });
+    var bici = bicicleta.findById(req.params.id);
+    if(bici){
+        var {color, modelo, latitud, longitud} = req.body;
+        if(color && modelo && latitud && longitud){
+            bici.color = color;
+            bici.modelo = modelo;
+            bici.ubicacion = [latitud, longitud];
+            res.status(200).json({
+                bicicleta:bici
+            });
+        }
+    }
 
 }
